@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         intent.setAction("com.example.MY_ACTION");
+        intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         intent.putExtra("myMessage", message);
         sendBroadcast(intent);
         Toast.makeText(this, "Intent Broadcast Successfully \n containing message: "+message, Toast.LENGTH_SHORT).show();
